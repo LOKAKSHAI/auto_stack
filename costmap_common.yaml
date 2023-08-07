@@ -1,0 +1,30 @@
+footprint: [[-0.40,-0.30],[-0.40,0.30],[0.90,0.30],[0.90,-0.30]]
+footprint_padding: 0.1
+
+robot_base_frame: base_footprint
+update_frequency: 10.0
+publish_frequency: 10.0
+transform_tolerance: 0.5
+
+
+
+obstacle_range: 5.5
+raytrace_range: 6.0
+
+
+publish_voxel_map: true
+
+#layer definitions
+static:
+    map_topic: /map
+    subscribe_to_updates: true
+
+#map_type: costmap
+
+obstacles_laser:
+    observation_sources: laser
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan, inf_is_valid: true}
+
+
+inflation:
+    inflation_radius: 0.2
